@@ -1,0 +1,36 @@
+{ 
+  "size":0,
+  "query": { 
+    "bool": { 
+      "should": [ 
+        { 
+          "match": { 
+            "my_field.suggest": { 
+              "query": "にほｎ" 
+            } 
+          } 
+        },
+        { 
+          "match": { 
+            "my_field.readingform": { 
+              "query": "にほｎ",
+              "fuzziness":"AUTO",
+              "operator": "and" 
+            } 
+          } 
+        } 
+      ] 
+    } 
+  },
+  "aggs": { 
+    "keywords": { 
+      "terms": { 
+        "field": "my_field",
+        "order": { 
+          "_count": "desc" 
+        },
+        "size":"10" 
+      } 
+    } 
+  } 
+}

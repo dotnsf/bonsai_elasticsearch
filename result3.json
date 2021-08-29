@@ -1,0 +1,31 @@
+{
+  "took":2,
+  "timed_out":false,
+  "_shards":{
+    "total":1,
+    "successful":1,
+    "skipped":0,
+    "failed":0
+  },
+  "hits":{
+    "total":{
+      "value":17,
+      "relation":"eq"
+    },
+    "max_score":null,
+    "hits":[]
+  },
+  "aggregations":{
+    "keywords":{
+      "doc_count_error_upper_bound":0,
+      "sum_other_doc_count":0,
+      "buckets":[
+        {"key":"日本","doc_count":6},
+        {"key":"日本 地図","doc_count":5},
+        {"key":"日本 郵便","doc_count":3},
+        {"key":"日本の人口","doc_count":2},
+        {"key":"日本 代表","doc_count":1}
+      ]
+    }
+  }
+}
